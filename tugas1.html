@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Diri</title>
+    <script>
+        function showHello() {
+            // Get the value of the name and nim fields
+            var nama = document.getElementById("nama").value;
+            var nim = document.getElementById("nim").value;
+            
+            // Check if both fields have values
+            if (nama && nim) {
+                document.getElementById("message").innerHTML = "Hello " + nama + "!";
+            } else {
+                document.getElementById("message").innerHTML = "Please fill out both fields.";
+            }
+
+            // Prevent the form from actually submitting
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <form method="post" action="" onsubmit="return showHello()">
+        <label for="nama">Nama panjang: </label><br>
+        <input type="text" id="nama" name="nama" value=""><br>
+        <label for="nim">Nim:</label><br>
+        <input type="text" id="nim" name="nim" value=""><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+
+    <!-- Area to display the "Hello" message -->
+    <div id="message"></div>
+</body>
+</html>
